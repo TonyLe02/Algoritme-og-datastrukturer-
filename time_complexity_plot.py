@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import math
 
 # Define the range of input sizes
 n = np.linspace(1, 20, 400)
@@ -12,7 +13,7 @@ sqrt_n = np.sqrt(n)
 n_log_n = n * np.log(n)
 two_n_squared = 2 * n**2
 n_cubed = n**3 + 3 * n**2
-n_factorial = [np.math.factorial(i) for i in n]
+n_factorial = [math.factorial(int(i)) for i in n]
 
 # Plot the functions
 plt.figure(figsize=(10, 6))
@@ -30,6 +31,9 @@ plt.xlabel('Input Size (n)')
 plt.ylabel('Time Complexity')
 plt.title('Time Complexity of Functions')
 plt.legend()
+
+# Use a logarithmic scale for the y-axis
+plt.yscale('log')
 
 # Show the plot
 plt.show()
